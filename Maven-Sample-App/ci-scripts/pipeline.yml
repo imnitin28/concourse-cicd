@@ -1,5 +1,5 @@
 resources:
-  - name: spring-boot-service
+  - name: Maven-Sample-App
     type: git
     source:
       uri: https://github.com/imnitin28/concourse-cicd.git
@@ -10,7 +10,7 @@ jobs:
     public: true
 
     plan:
-      - get: spring-boot-service
+      - get: Maven-Sample-App
         trigger: true
       - task: mvn-test
-        file: "spring-boot-service/concourse_ci/tasks/maven-test.yml"
+        file: "maven-test.yml"
