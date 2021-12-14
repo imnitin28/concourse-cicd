@@ -1,5 +1,5 @@
 resources:
-  - name: Maven-Sample-App
+  - name: maven-app
     type: git
     source:
       uri: https://github.com/imnitin28/concourse-cicd.git
@@ -13,4 +13,4 @@ jobs:
       - get: Maven-Sample-App
         trigger: true
       - task: mvn-test
-        file: "maven-test.yml"
+        file: "./Maven-Sample-App/ci-scripts/tasks/maven-test.yml"
